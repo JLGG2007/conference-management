@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../images/conference_background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-logo img {
+    width: 50px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-nav-links a, .header-nav-buttons a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.header-nav-buttons button {
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#perfil {
+    background: red;
+    border-radius: 15px;
+}
+
+.menu-admin {
+    text-align: center;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    margin: auto;
+}
+
+.buttons button {
+    background: red;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.voltar {
+    background: gray;
+}

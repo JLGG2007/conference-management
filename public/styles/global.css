@@ -46,18 +46,7 @@
 
 .nav-link:hover { color: var(--red_one); }
 
-.header-nav-buttons a { text-decoration: none; }
 
-.header-nav-buttons button {
-  width: 6.5rem;
-  padding: 0.4rem;
-
-  cursor: pointer;
-  transition: .5s ease all;
-
-  border-radius: 0.3rem;
-  border: 0.1rem solid transparent;
-}
 
 #signin {
   color: #FFFFFF;
