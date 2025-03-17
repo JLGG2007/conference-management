@@ -28,7 +28,7 @@
           <a href="../pages/menuadmin.php">
             <button id="menuadmin">Menu Admin</button>
           </a>
-          <a href="#">
+          <a href="../pages/menuperfil.php">
             <button id="perfil">Perfil</button>
           </a>
         </div>

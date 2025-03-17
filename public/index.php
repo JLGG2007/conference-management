@@ -24,6 +24,9 @@
         <a href="./pages/register.php">
           <button id="signup">Criar Conta</button>
         </a>
+        <a href="./pages/menuadmin.php">
+            <button id="menuadmin">Menu Admin</button>
+          </a>
       </div>
     </nav>  
   </header>
