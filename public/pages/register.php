@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  $isLoggedIn = isset($_SESSION['user_login']) || isset($_COOKIE['user_login']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-PT">
   <head>
@@ -18,15 +23,22 @@
           <a href="../pages/protected/conferencias.php" class="nav-link">Conferências</a>
         </div>
         <div class="header-nav-buttons">
-          <a href="./login.php">
-            <button id="signin">Iniciar Sessão</button>
-          </a>
-          <a href="./register.php">
-            <button id="signup">Criar Conta</button>
-          </a>
-          <a href="../pages/menuadmin.php">
-            <button id="menuadmin">Menu Admin</button>
-          </a>
+          <?php if ($isLoggedIn): ?>
+            <a href="../pages/protected/profile.php" class="profile-link">
+              <img 
+                src="<?php echo !empty($_SESSION['profile_picture']) ? $_SESSION['profile_picture'] : '../images/default_profile.jpg'; ?>" 
+                alt="Foto de Perfil" 
+                class="profile-image"
+              >
+            </a>
+          <?php else: ?>
+            <a href="./login.php">
+              <button id="signin">Iniciar Sessão</button>
+            </a>
+            <a href="./register.php">
+              <button id="signup">Criar Conta</button>
+            </a>
+          <?php endif; ?>
         </div>
       </nav>  
     </header>
@@ -60,7 +72,7 @@
           </div>
           <button class="button-register" type="submit">Criar Conta</button>
         </form>
-        <h3 class="login-text">Já tem uma conta? <a href="./login.html">Inicie sua sessão</a></h3>
+        <h3 class="login-text">Já tem uma conta? <a href="./login.php">Inicie sua sessão</a></h3>
       </section>
     </main>
   </body>
