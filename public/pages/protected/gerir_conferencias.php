@@ -63,7 +63,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../styles/global.css">
   <link rel="stylesheet" href="../../styles/css/conferencias.css">
-  <title>Inovatech | Conferencias</title>
+  <title>Inovatech | Gerir Conferências</title>
 </head>
 <body>
   <header class="header">
@@ -103,7 +103,7 @@
     </nav>  
   </header>
   <main>
-    <h1>Conferências da Semana</h1>
+    <h1><?php echo mysqli_num_rows($result); ?> Conferências</h1>
     <div class="filtro-semana">
       <form method="GET" action="" id="filtroForm">
         <label for="semana">Selecione a semana:</label>
@@ -143,8 +143,19 @@
               </div>
             </div>
             <div class="conferencia-detalhes">
-              <h2><?php echo htmlspecialchars($row['titulo']); ?></h2>
-              <p><?php echo htmlspecialchars($row['descricao']); ?></p>
+              <div class="conferencia-detalhes-content">
+                <h2><?php echo htmlspecialchars($row['titulo']); ?></h2>
+                <p><?php echo htmlspecialchars($row['descricao']); ?></p>
+                <hr>
+                <div class="conferencia-btn">
+                  <button type="button" class="btn-conferencia-action">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                  <button type="button" class="btn-conferencia-action">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -155,8 +166,9 @@
   </main>
 </body>
 <script>
-    function filtrarAutomaticamente() {
+  function filtrarAutomaticamente() {
       document.getElementById('filtroForm').submit();
-    }
-  </script>
+  }
+</script>
+<script src="https://kit.fontawesome.com/15df1461d5.js" crossorigin="anonymous"></script>
 </html>
